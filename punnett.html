@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punnett Square - BioHub</title>
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<div class="page-background"></div>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<nav class="sidebar">
+    <div class="sidebar-header">
+        <i class="fas fa-dna logo-icon"></i>
+        <h2>BioHub</h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+        <li><a href="punnett.html" class="active"><i class="fas fa-table-cells"></i> <span>Punnett Square</span></a>
+        </li>
+        <li><a href="genetics.html"><i class="fas fa-microscope"></i> <span>DNA Tools</span></a></li>
+        <li><a href="blood.html"><i class="fas fa-droplet"></i> <span>Blood Analysis</span></a></li>
+        <li><a href="fitness.html"><i class="fas fa-heart-pulse"></i> <span>Fitness Calcs</span></a></li>
+        <li><a href="hydration.html"><i class="fas fa-glass-water"></i> <span>Hydration</span></a></li>
+    </ul>
+</nav>
+
+<main class="main-content">
+    <header class="top-header">
+        <div class="header-text">
+            <h1>Punnett Square Generator</h1>
+            <p>Calculate genotype ratios and explore Mendelian inheritance.</p>
+        </div>
+        <button id="mobile-menu-btn" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+    </header>
+
+    <section class="tool-container punnett-card">
+        <div class="tool-intro">
+            <p>Enter the 2-letter genotypes for each parent (e.g., Aa, BB, tt) to generate a Punnett Square and see
+                the genotype ratios.</p>
+        </div>
+
+        <form id="punnettForm" onsubmit="event.preventDefault(); generatePunnettSquare();">
+            <div class="input-group">
+                <label for="p1Punnett">Parent 1 Genotype (e.g., Aa):</label>
+                <input type="text" id="p1Punnett" maxlength="2" placeholder="e.g., Aa" required>
+            </div>
+
+            <div class="input-group">
+                <label for="p2Punnett">Parent 2 Genotype (e.g., Aa):</label>
+                <input type="text" id="p2Punnett" maxlength="2" placeholder="e.g., Aa" required>
+            </div>
+
+            <button type="submit" class="btn-primary"><i class="fas fa-table-cells"></i> Generate Punnett
+                Square</button>
+        </form>
+
+        <div id="punnettResults" class="result-box" style="display: none;"></div>
+    </section>
+</main>
+
+<script src="js/app.js"></script>
+<script src="js/genetics.js"></script>
+</body>
+
+</html>
